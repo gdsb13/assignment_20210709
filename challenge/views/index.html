@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wallet sample</title>
+    <meta name="description" content="Wallet sample" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Users
+      </h1>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/client.js"></script>
+
+    <main>
+      <h2>
+        Use balance
+      </h2>
+      <form
+        action="/update"
+        method="POST"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <input
+          name="user"
+          type="text"
+          maxlength="100"
+          value=""
+          placeholder="User id here"
+        />
+        <input
+          name="deductBalance"
+          type="number"
+          maxlength="100"
+          value=""
+          placeholder="Input Balance to use"
+        />
+        <button type="submit">Use balance</button>
+      </form>
+      <h2>Top-up</h2>
+      <form
+        action="/topup"
+        method="POST"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <input
+          name="user"
+          type="text"
+          maxlength="100"
+          value=""
+          placeholder="User id here"
+        />
+        <input
+          name="addBalance"
+          type="number"
+          maxlength="100"
+          value=""
+          placeholder="Input Balance to add"
+        />
+        <input
+          name="promo"
+          type="text"
+          maxlength="100"
+          value=""
+          placeholder="Promo code"
+        />
+        <button type="submit">Add balance</button>
+      </form>
+      <h2>Users data</h2>
+      <section class="users">
+        <ul id="users"></ul>
+      </section>
+    </main>
+  </body>
+</html>
